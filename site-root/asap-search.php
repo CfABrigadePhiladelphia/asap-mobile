@@ -33,13 +33,10 @@ if (!empty($_GET['q'])) {
 // add ASAP clubs filter
 if (!empty($_GET['clubs'])) {
     $clubs = is_array($_GET['clubs']) ? $_GET['clubs'] : [$_GET['clubs']];
+    $where = array_merge($where, ASAPSearch::getClubConditions($clubs));
 }
 
-foreach (ASAPSearch::$validClubs AS $column) {
-    if (isset($clubs) && in_array($column, $clubs)) {
-        $where[] = "Site$column = 1";
-    }
-}
+
 
 
 // add distance calculation / order

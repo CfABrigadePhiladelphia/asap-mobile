@@ -97,4 +97,17 @@ class ASAPSearch
 
         return $where;
     }
+
+    public static function getClubConditions(array $clubs)
+    {
+        $where = [];
+
+        foreach (static::$validClubs AS $column) {
+            if (in_array($column, $clubs)) {
+                $where[] = "Site$column = 1";
+            }
+        }
+
+        return $where;
+    }
 }
