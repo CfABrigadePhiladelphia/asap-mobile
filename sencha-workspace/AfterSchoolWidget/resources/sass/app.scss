@@ -1,0 +1,120 @@
+$base-color: #206bb5;
+$base-gradient: 'flat';
+$accent-color: #007cbe;
+$muted-color: #777;
+$trans-black: rgba(black, .2);
+$dark-trans-black: rgba(black, .85);
+
+// The following two lines import the default Sencha Touch theme. If you are building
+// a new theme, remove them and the add your own CSS on top of the base CSS (which
+// is already included in your app.json file).
+@import 'sencha-touch/default';
+@import 'sencha-touch/default/all';
+
+// Custom code goes here..
+
+// Examples of using the icon mixin:
+// @include icon('user');
+
+
+
+// patch for ugly loadmask in ST 2.3
+.x-mask {
+    .x-mask-inner {
+		background: rgba(black, .4);
+		@include border-radius(.5em);
+	}
+	
+	.x-mask-message {
+		bottom: 1em;
+		color: white;
+	}
+	
+	&.x-has-message {
+		.x-loading-spinner-outer {
+			height: 6em;
+		}
+	}
+    & > .x-innerhtml {
+        color: #FFF;
+        font-size: 24px;
+        text-align: center;
+    }
+}
+
+.x-sheet iframe {
+    background-color: #FFF;
+    padding: 0.5em;
+}
+.x-sheet-inner > .x-button:last-child {
+    margin-top: 0.7em;
+}
+.x-toolbar .x-title {
+    padding-top: 0;
+}
+.x-field-search .x-field-input {
+    border-bottom: 1px solid #CCC;
+}
+.x-menu .x-button {
+    margin: 0.6em;
+}
+.x-menu .x-toolbar .x-button {
+    margin-bottom: 0.6em;
+}
+.x-scroll-scroller .x-unsized:not(.x-field-input) {
+    padding: 0.3em 0.6em;
+}
+.x-list-item > .x-innerhtml {
+    font-size: 12px;
+}
+.x-list .x-list-item.x-list-item-tpl .x-innerhtml {
+    padding: 1em;
+}
+.x-form-label {
+    background-color: #FFF;
+}
+.gm-style-iw {
+    font-family: 'Helvetica Neue', HelveticaNeue, Helvetica-Neue, Helvetica, 'BBAlpha Sans', sans-serif;
+    overflow: visible !important;
+
+    & > div {
+        overflow: visible !important;
+    }
+    
+    h5 {
+        font-size: 14px;
+        font-weight: normal;
+        margin-bottom: 0.6429em;
+    }
+    p {
+        font-size: 12px;
+        margin-bottom: 0.75em;
+    }
+        a {
+            text-decoration: none;
+        }
+    p:last-child {
+        margin-bottom: 0;
+        margin-right: -18px;
+        text-align: center;
+    }
+    p:last-child > a {
+        background-color: #eee;
+        display: block;
+        padding: 0.3333em;
+    }
+}
+.x-list-emptytext > .x-innerhtml {
+    font-size: 12px;
+}
+
+.about-sheet {
+    background-color: #F7F7F7;
+    color: #333;
+}
+.about-sheet img {
+    display: block;
+    margin: 0 auto 1.5em;
+    max-height: 350px;
+    max-width: 100%;
+}
