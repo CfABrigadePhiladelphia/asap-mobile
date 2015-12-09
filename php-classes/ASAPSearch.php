@@ -102,10 +102,8 @@ class ASAPSearch
     {
         $where = [];
 
-        foreach (static::$validClubs AS $column) {
-            if (in_array($column, $clubs)) {
-                $where[] = "Site$column = 1";
-            }
+        foreach (array_intersect(static::$validClubs, $clubs) AS $column) {
+            $where[] = "Site$column = 1";
         }
 
         return $where;
